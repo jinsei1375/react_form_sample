@@ -1,22 +1,16 @@
 import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function Form() {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-
-    const handleNameChange = (e) => {
-        setName(e.target.value);
-    };
-
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
-    };
+    const location = useLocation();
+    const initialState = location.state || { name: '', email: '' }; // locationからstateを取得、なければ初期値を設定
+    const [name, setName] = useState(initialState.name);
+    const [email, setEmail] = useState(initialState.email);
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission logic here
-        console.log('Name:', name);
-        console.log('Email:', email);
+        navigate('/form/confirm', { state: { name, email } });
     };
 
     return (
@@ -25,15 +19,15 @@ function Form() {
             <form onSubmit={handleSubmit}>
                 <label>
                     Name:
-                    <input type="text" value={name} onChange={handleNameChange} />
+                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
                 </label>
                 <br />
                 <label>
                     Email:
-                    <input type="email" value={email} onChange={handleEmailChange} />
+                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </label>
                 <br />
-                <button type="submit">Submit</button>
+                <button type="submit">確認画面へ</button>
             </form>
         </>
     );
