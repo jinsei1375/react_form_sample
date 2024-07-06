@@ -1,19 +1,8 @@
-import { BrowserRouter, Link } from 'react-router-dom';
 import './App.css';
-import { Router } from './components/Router';
+import Header from './components/Header';
 
 function App() {
-  return (
-    <BrowserRouter>
-      <div className="App">
-        <Link to="/">Home</Link>
-        <br />
-        <Link to="form">フォーム</Link>
-        <br />
-        <Router />
-      </div>
-    </BrowserRouter>
-  );
+  return <Header />;
 }
 
 export default App;
