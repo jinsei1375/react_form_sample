@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom';
 function Header() {
   return (
     <header>
-      <Link to="/">Home</Link>
-      <br />
+      <Link to="/">Home</Link> |
       <Link to="form">フォーム</Link>
-      <br />
     </header>
   );
 }
