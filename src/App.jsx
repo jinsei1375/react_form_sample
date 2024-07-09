@@ -5,13 +5,13 @@ import Footer from './components/Footer';
 import { Router } from './components/Router';
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Header />
-      <Router />
-      <Footer />
-    </BrowserRouter>
-  );
+	return (
+		<BrowserRouter>
+			<Header />
+			<Router />
+			<Footer />
+		</BrowserRouter>
+	);
 }
 
 export default App;
