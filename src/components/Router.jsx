@@ -3,6 +3,7 @@ import Home from '../Home';
 import Form from '../Form';
 import Confirm from '../Confirm';
 import Completed from '../Completed';
+import Count from '../Count';
 
 export const Router = () => {
 	return (
@@ -11,6 +12,7 @@ export const Router = () => {
 			<Route path="/form" element={<Form />} />
 			<Route path="/form/confirm" element={<Confirm />} />
 			<Route path="/form/completed" element={<Completed />} />
+			<Route path="/count" element={<Count />} />
 		</Routes>
 	);
 };
