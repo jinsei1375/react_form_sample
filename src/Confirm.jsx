@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 function ConfirmationPage() {
 	const location = useLocation();
+    console.log(location)
 	const { name, email } = location.state;
 	const navigate = useNavigate();
 
